@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+</head>
+<body>
+<div id="playercontainer"></div>
+<script type="text/javascript" src="player/cyberplayer.js"></script>
+<script type="text/javascript">
+    var player = cyberplayer("playercontainer").setup({
+        width: 680,
+        height: 448,
+        file: "rtmp://192.168.0.164:1935/live/room", // <—rtmp or flv直播地址
+        fallbackfile: "http://192.168.0.164:55555/temp/hls/test.m3u8", // <— 备用播放地址，为了手机上能进行直播，设置hls直播流
+        autostart: true,
+        stretching: "uniform",
+        volume: 100,
+        controls: true,
+        ak: "6f9a246e6d954529bb3701df16d19229" // 公有云平台注册即可获得accessKey
+    });
+</script>
+</body>
+</html>
